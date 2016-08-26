@@ -16,10 +16,6 @@
 
   <repositories>
     <repository>
-      <id>civcraft-repo</id>
-      <url>http://build.civcraft.co:8080/plugin/repository/everything/</url>
-    </repository>
-    <repository>
       <id>spigot-repo</id>
       <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
     </repository>
@@ -49,6 +45,7 @@
             <groupId>co.civcraft.maven</groupId>
             <artifactId>civcraft-checkstyle</artifactId>
             <version>1.0.0</version>
+            <scope>compile</scope>
           </dependency>
         </dependencies>
         <executions>
@@ -63,6 +60,20 @@
             </configuration>
             <goals>
               <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>2.4.3</version>
+        <inherited>false</inherited>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
             </goals>
           </execution>
         </executions>

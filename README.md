@@ -6,7 +6,7 @@ All Civcraft Maven projects should inherit from this pom.
 
 To inherit from this pom, put this into your project's pom.xml:
 ```
-<project?>
+<project>
   ...
   <parent>
     <groupId>co.civcraft.maven</groupId>
